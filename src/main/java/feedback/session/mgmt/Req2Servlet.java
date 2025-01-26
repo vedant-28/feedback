@@ -9,8 +9,9 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/servlet2")
+@WebServlet("/feedback/servlet2")
 public class Req2Servlet extends HttpServlet {
 
 	@Override
@@ -27,9 +28,19 @@ public class Req2Servlet extends HttpServlet {
 				if(name.equals("userName")) {
 					writer.println("<h1>Welcome: %s</h1>".formatted(c.getValue()));
 					flag = true;
+				} else if(name.equals("userId")) {
+					System.out.println("userName: " + c.getValue());
+					System.out.println("userId: " + c.getValue());
+					flag = true;
 				}
 			}
 		}
+		
+		//// HttpSession method for session mgmt:
+		HttpSession session = req.getSession();
+		String userId = (String) session.getAttribute("userId");
+		writer.println("<h2>UserId: %s</h2>".formatted(userId));
+		
 		if(!flag) {
 			writer.println("<h1>No user logged in...</h1>");
 		}

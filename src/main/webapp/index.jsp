@@ -10,7 +10,9 @@
   <body>
     <%@include file="header.jsp" %>
     <div class="container d-flex justify-content-center align-items-center py-4">
-    	<a href="<%= application.getContextPath() %>/feedback.jsp" class="btn btn-light">submit feedback</a>
+    	<a href="<%= application.getContextPath() %>/feedback.jsp" class="m-5 btn btn-light">submit feedback</a>
+    	<a href="<%= application.getContextPath() %>/servlet1" class="m-5 btn btn-light">servlet 1</a>
+    	<a href="<%= application.getContextPath() %>/feedback/servlet2" class="m-5 btn btn-light">servlet 2</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="<%=application.getContextPath()%>/js/script.js"></script>
